@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Word Craft – Play and Learn English</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Link to the CSS file in the same folder -->
+  <link rel="stylesheet" href="wordcraft.css">
+</head>
+<body>
+  <!-- Persistent Header -->
+  <div id="header">
+    <h1>Word Craft</h1>
+    <h2>Play and Learn English</h2>
+  </div>
+
+  <!-- Generic Message Overlay -->
+  <div id="message"></div>
+
+  <!-- Rules Overlay -->
+  <div id="rulesOverlay">
+    <center>
+      <h1>Word Craft</h1>
+      <h2>Play and Learn English</h2>
+    </center>
+    <br/><br/><br/><br/>
+    <h4>Rules</h4>
+    <ul>
+      <li><strong>Form Words Strategically:</strong> Place letters on a 15×15 board to create words horizontally or vertically. Diagonal words are not allowed.</li>
+      <li><strong>Scoring System:</strong> Earn points equal to the length of each valid word you form. Short words (minimum 2 letters) like “TO” or “IF” are also counted.</li>
+      <li><strong>Plural Rule:</strong> If a word is played in its plural form, but its singular version is also valid, no points will be awarded to avoid duplicate scoring.</li>
+      <li><strong>Color Highlights:</strong> Every valid word is highlighted in the player’s chosen color for easy identification.</li>
+    </ul>
+    <h4>Features</h4>
+    <ul>
+      <li>✨ <strong>Audio Assistance:</strong> Click on the speaker icon to hear the word’s pronunciation in English or its translation in your selected language.</li>
+      <li>✨ <strong>Immersive Space-Themed Design:</strong> Enjoy a futuristic, neon-lit space theme with a dark background that reduces eye strain and enhances your gaming experience.</li>
+      <li>✨ <strong>Multilingual Learning:</strong> Access a wide selection of languages to understand word meanings in your preferred language.</li>
+    </ul>
+    <h4>Credits</h4>
+    <p style="text-align: center;">👨‍💻 <strong>Developed By:</strong> Inaya Batish</p>
+    <div style="text-align:center;">
+      <button id="startGameButton">Let’s Play!</button>
+    </div>
+  </div>
+
+  <!-- Player Setup -->
+  <div id="playerSetup">
+    <div id="highScoreBox"></div>
+    <div id="modeSelection">
+      <h2>Select Game Mode</h2>
+      <button id="singlePlayerBtn">Single Player</button>
+      <button id="multiPlayerBtn">Multiplayer</button>
+    </div>
+    <div id="singlePlayerSetup" style="display:none;">
+      <h2>Single Player Setup</h2>
+      <form id="singlePlayerForm">
+        <label for="singlePlayerName">Your Name:</label>
+        <input type="text" id="singlePlayerName" required>
+        <br/><br/>
+        <label for="difficultySelect">Select Difficulty:</label>
+        <select id="difficultySelect" required>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+        <br/><br/>
+        <button type="submit">Start Game</button>
+      </form>
+    </div>
+    <form id="setupForm" style="display:none;">
+      <h2>Setup Players</h2>
+      <label for="numPlayers">Number of players (2-4): </label>
+      <input type="number" id="numPlayers" min="2" max="4" required>
+      <div id="playerNames"></div>
+      <button type="submit">Start Game</button>
+    </form>
+    <div id="voiceSelection">
+      <label for="voiceSelect">Select Voice:</label>
+      <select id="voiceSelect"></select>
+    </div>
+    <button id="resumeGameButton" style="display:none;">Resume Last Game</button>
+  </div>
+
+  <!-- Game Area -->
+  <div id="game" style="display:none;">
+    <div id="currentPlayerDisplay"></div>
+    <div id="gameContainer">
+      <div id="board"></div>
+      <div id="rightPanel">
+        <div id="scoreTable"></div>
+        <div id="meaningBoxContainer">
+          <div id="meaningGreeting"></div>
+          <div id="meaningBox"></div>
+        </div>
+      </div>
+    </div>
+    <div id="gameButtons" style="display:flex; justify-content:center; gap:10px; margin-top:10px;">
+      <button id="endGameButton">End Game</button>
+      <button id="resetGameButton">Reset Game</button>
+      <button id="saveGameButton">Save Game</button>
+    </div>
+  </div>
+
+  <!-- Floating Footer -->
+  <div id="floating-footer">
+    Users Online: <span id="users-online">20</span>
+  </div>
+
+  <!-- Link to the JS file in the same folder -->
+  <script src="wordcraft.js"></script>
+</body>
+</html>

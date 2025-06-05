@@ -7,6 +7,28 @@
 
   <!-- Link to the CSS file in the same folder -->
   <link rel="stylesheet" href="wordcraft.css">
+
+
+<!-- PWA manifest: -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Theme color (used on Android’s status bar, etc.) -->
+  <meta name="theme-color" content="#00ffff">
+
+  <!-- iOS “Add to Home Screen” icon: -->
+  <link rel="apple-touch-icon" href="icon-192.png">
+
+  <!-- Service Worker registration (place near top of <head> or right before </body>): -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('service-worker.js')
+        .then(() => console.log('✅ Service Worker registered'))
+        .catch(err => console.error('Service Worker registration failed:', err));
+    }
+  </script>
+
+
 </head>
 <body>
   <!-- Persistent Header -->
@@ -112,3 +134,4 @@
   <script src="wordcraft.js"></script>
 </body>
 </html>
+
